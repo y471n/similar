@@ -3,6 +3,8 @@ import "./App.css";
 import prettify from "./helpers/prettify";
 import getComparisonScores from "./helpers/similarity";
 import isJSON from "./helpers/isJSON";
+import Warning from "./components/warning";
+import CustomInput from "./components/customInput";
 
 const App = () => {
   const [input1, setInput1] = React.useState("");
@@ -21,6 +23,7 @@ const App = () => {
     if (isJSON(value)) {
       const prettifiedInput = prettify(value);
       setInput(prettifiedInput);
+      setWarning("");
     } else {
       setInput(value);
       setWarning("Please enter a valid JSON.");
@@ -32,28 +35,24 @@ const App = () => {
       <main>
         <div className="flex-container">
           <div>
-            <textarea
-              cols="50"
-              rows="50"
+            <CustomInput
               value={input1}
-              onChange={(event) =>
-                handleInputChange(event, setInput1, setWarning1)
-              }
-            ></textarea>
+              setInput={setInput1}
+              setWarning={setWarning1}
+              handleInputChange={handleInputChange}
+            />
             <br />
-            <span className="warning">{warning1}</span>
+            <Warning title={warning1} />
           </div>
           <div>
-            <textarea
-              cols="50"
-              rows="50"
+            <CustomInput
               value={input2}
-              onChange={(event) =>
-                handleInputChange(event, setInput2, setWarning2)
-              }
-            ></textarea>
+              setInput={setInput2}
+              setWarning={setWarning2}
+              handleInputChange={handleInputChange}
+            />
             <br />
-            <span className="warning">{warning2}</span>
+            <Warning title={warning2} />
           </div>
         </div>
         <span id="score">Similarity Score: {score}</span>
