@@ -1,26 +1,67 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [input1, setInput1] = React.useState("");
+  const [input2, setInput2] = React.useState("");
+
+  const isJSON = (str) => {
+    try {
+      JSON.parse(str);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+
+  const prettify = (ugly) => {
+    const obj = JSON.parse(ugly);
+    const pretty = JSON.stringify(obj, undefined, 4);
+    return pretty;
+  };
+
+  const handleInput1 = (event) => {
+    const value = event.target.value;
+    setInput1(value);
+    if (isJSON(value)) {
+      const prettifiedInput = prettify(value);
+      setInput1(prettifiedInput);
+    }
+  };
+
+  const handleInput2 = (event) => {
+    const value = event.target.value;
+    setInput2(value);
+    if (isJSON(value)) {
+      const prettifiedInput = prettify(value);
+      setInput2(prettifiedInput);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <div class="flex-container">
+          <div>
+            <textarea
+              cols="50"
+              rows="50"
+              value={input1}
+              onChange={handleInput1}
+            ></textarea>
+          </div>
+          <div>
+            <textarea
+              cols="50"
+              rows="50"
+              value={input2}
+              onChange={handleInput2}
+            ></textarea>
+          </div>
+        </div>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
