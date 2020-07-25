@@ -25,10 +25,14 @@ const getComparisonScores = (str1, str2) => {
   if (!str1 || !str2) {
     return 0;
   }
-
   try {
     const json1 = JSON.parse(str1);
     const json2 = JSON.parse(str2);
+
+    if (typeof json1 !== "object" || typeof json2 !== "object") {
+      return 0;
+    }
+
     // Sort the JSONs
     const ordered1 = sortObject(json1);
     const ordered2 = sortObject(json2);

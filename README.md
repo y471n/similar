@@ -7,6 +7,11 @@ This react program compares 2 JSON objects and gives a score from 0 to 1 dependi
 1 depicts identical.
 0 states dissimilar.
 
+## How It Works
+
+Add 2 JSONs in both columns and see the comparison result at the end of the page.
+In case, the text input isn't a valid JSON, the comparison result will be 0.
+
 ## Stack
 
 1. ReactJS
@@ -18,6 +23,15 @@ This react program compares 2 JSON objects and gives a score from 0 to 1 dependi
 1. git clone <git url>
 2. yarn install
 3. yarn start
+
+## Testing
+
+1. To test locally run `npm run test`
+2. To see the test coverage report
+
+   1. Run `npm run test -- --coverage --watchAll=false`
+
+   2. Navigate to the new coverage folder and run `index.html` for viewing coverage report.
 
 ## Demo
 
