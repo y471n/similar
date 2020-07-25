@@ -22,9 +22,6 @@ const sortObject = (unordered) => {
 };
 
 const getComparisonScores = (str1, str2) => {
-  console.log(str1);
-  console.log(str2);
-  console.log("Here");
   if (!str1 || !str2) {
     return 0;
   }
@@ -44,7 +41,6 @@ const getComparisonScores = (str1, str2) => {
     }
     // Get Levensthein Distance
     const levenshteinDistance = levenshtein(longerString, shorterString);
-    console.log(levenshteinDistance);
     // Set Score
     const score =
       (longerString.length - levenshteinDistance) / longerString.length;

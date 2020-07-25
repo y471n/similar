@@ -1,4 +1,7 @@
 const isJSON = (str) => {
+  if (typeof str !== "string") {
+    return false;
+  }
   try {
     JSON.parse(str);
     return true;
