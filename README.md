@@ -21,8 +21,10 @@ This react program compares 2 JSON objects and gives a score from 0 to 1 dependi
 
 ## Demo
 
-The demo website is deployed at <a href="https://similar.netlify.app/">Netlify</a>
+The demo website is deployed at <a href="https://similar.netlify.app/" target="_blank">Netlify</a>
 
-## Deployment
+![Netlify Status](https://api.netlify.com/api/v1/badges/cec1327b-bd43-4e42-873f-f786185bcb2f/deploy-status)]
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cec1327b-bd43-4e42-873f-f786185bcb2f/deploy-status)](https://app.netlify.com/sites/similar/deploys)
+![Build Branches](./coverage/badge-branches.svg) ![Build Functions](./coverage/badge-functions.svg)
+
+![Build Lines](./coverage/badge-lines.svg) ![Build Statements](./coverage/badge-statements.svg)

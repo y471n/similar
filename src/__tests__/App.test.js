@@ -6,6 +6,7 @@ import Warning from "../components/warning";
 
 it("Should render the dom", () => {
   const wrapper = shallow(<App />);
+  expect(wrapper).toMatchSnapshot();
   expect(wrapper.find("main")).toBeDefined();
   const warning = wrapper.find(Warning);
   expect(warning.exists()).toBe(true);
