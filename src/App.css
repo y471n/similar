@@ -5,9 +5,13 @@
 }
 main {
   padding: 2rem;
+  text-align: center;
 }
 .flex-container {
   display: flex;
-  /* justify-content: center; */
   justify-content: space-around;
+}
+#score {
+  padding-top: 0.5rem;
+  font-size: 1.3rem;
 }

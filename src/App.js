@@ -1,53 +1,40 @@
 import React from "react";
 import "./App.css";
+import prettify from "./helpers/prettify";
+import getComparisonScores from "./helpers/similarity";
+import isJSON from "./helpers/isJSON";
 
 const App = () => {
   const [input1, setInput1] = React.useState("");
   const [input2, setInput2] = React.useState("");
+  const [score, setScore] = React.useState(0);
 
-  const isJSON = (str) => {
-    try {
-      JSON.parse(str);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  };
+  React.useEffect(() => {
+    const score = getComparisonScores(input1, input2);
+    setScore(score);
+  }, [input1, input2]);
 
-  const prettify = (ugly) => {
-    const obj = JSON.parse(ugly);
-    const pretty = JSON.stringify(obj, undefined, 4);
-    return pretty;
-  };
-
-  const handleInput1 = (event) => {
+  const handleInputChange = (event, setInput) => {
     const value = event.target.value;
-    setInput1(value);
     if (isJSON(value)) {
       const prettifiedInput = prettify(value);
-      setInput1(prettifiedInput);
-    }
-  };
-
-  const handleInput2 = (event) => {
-    const value = event.target.value;
-    setInput2(value);
-    if (isJSON(value)) {
-      const prettifiedInput = prettify(value);
-      setInput2(prettifiedInput);
+      setInput(prettifiedInput);
+    } else {
+      // Set warning message
+      setInput(value);
     }
   };
 
   return (
     <div className="App">
       <main>
-        <div class="flex-container">
+        <div className="flex-container">
           <div>
             <textarea
               cols="50"
               rows="50"
               value={input1}
-              onChange={handleInput1}
+              onChange={(event) => handleInputChange(event, setInput1)}
             ></textarea>
           </div>
           <div>
@@ -55,10 +42,11 @@ const App = () => {
               cols="50"
               rows="50"
               value={input2}
-              onChange={handleInput2}
+              onChange={(event) => handleInputChange(event, setInput2)}
             ></textarea>
           </div>
         </div>
+        <span id="score">Similarity Score: {score}</span>
       </main>
     </div>
   );
