@@ -37,8 +37,5 @@ In case, the text input isn't a valid JSON, the comparison result will be 0.
 
 The demo website is deployed at <a href="https://similar.netlify.app/" target="_blank">Netlify</a>
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/cec1327b-bd43-4e42-873f-f786185bcb2f/deploy-status)]
-
-![Build Branches](./coverage/badge-branches.svg) ![Build Functions](./coverage/badge-functions.svg)
-
-![Build Lines](./coverage/badge-lines.svg) ![Build Statements](./coverage/badge-statements.svg)
+![Testing Status](https://github.com/y471n/similar/workflows/Node.js%20CI/badge.svg)
+![Netlify Status](https://api.netlify.com/api/v1/badges/cec1327b-bd43-4e42-873f-f786185bcb2f/deploy-status)
