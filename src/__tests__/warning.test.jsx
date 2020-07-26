@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import Warning from "../components/warning";
+import Warning from "components/warning";
 
 it("Should render a span with given title", () => {
   const wrapper = shallow(<Warning title="hello" />);

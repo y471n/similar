@@ -1,4 +1,4 @@
-import similarity from "../helpers/similarity";
+import similarity from "helpers/similarity";
 
 it("Should return 0 when the parameters are not strings", () => {
   expect(similarity(1, 2)).toBe(0);

@@ -1,4 +1,4 @@
-import isJSON from "../helpers/isJSON";
+import isJSON from "helpers/isJSON";
 
 it("Should return true for empty JSON object strings", () => {
   expect(isJSON("{}")).toBe(true);

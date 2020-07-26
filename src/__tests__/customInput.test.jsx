@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import CustomInput from "../components/customInput";
+import CustomInput from "components/customInput";
 
 it("Should render a textarea with given title", () => {
   const wrapper = shallow(<CustomInput value="hello" />);

@@ -1,15 +1,12 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 
-import App from "../App";
-import Warning from "../components/warning";
+import App from "App";
 
 it("Should render the dom", () => {
   const wrapper = shallow(<App />);
   expect(wrapper).toMatchSnapshot();
   expect(wrapper.find("main")).toBeDefined();
-  const warning = wrapper.find(Warning);
-  expect(warning.exists()).toBe(true);
 });
 
 it("The score to be 1 for similarity on same JSON", () => {
