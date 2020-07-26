@@ -13,6 +13,7 @@ This react program compares 2 JSON objects and gives a score from 0 to 1 dependi
 2. The lowest similarity score is 0 which states that there is no similarity.
 3. The highest similarity score is 1 which is possible in case of the same JSON object.
 4. The UI provides a feature to copy/paste the JSON, incase the input isn't a well-formed JSON, the result should be 0.
+5. Empty string inputs result in a score of 0 too.
 
 ## How It Works
 

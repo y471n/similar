@@ -1,7 +1,6 @@
 import levenshtein from "js-levenshtein";
 
 const sortObject = (unordered) => {
-  // This shouldn't be the case anyhow; will remove later
   if (!unordered || typeof unordered !== "object") {
     return unordered;
   }
