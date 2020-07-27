@@ -1,5 +1,5 @@
 import React from "react";
-import CustomInput from "components/customInput";
+import CustomTextArea from "components/customTextArea";
 import Warning from "components/warning";
 import isJSON from "helpers/isJSON";
 import prettify from "helpers/prettify";
@@ -7,7 +7,7 @@ import prettify from "helpers/prettify";
 const JSONInput = ({ input, setInput }) => {
   const [warning, setWarning] = React.useState("");
 
-  const handleInputChange = (event, setInput) => {
+  const handleInputChange = (event) => {
     const value = event.target.value;
     if (isJSON(value)) {
       const prettifiedInput = prettify(value);
@@ -21,11 +21,7 @@ const JSONInput = ({ input, setInput }) => {
 
   return (
     <>
-      <CustomInput
-        value={input}
-        setInput={setInput}
-        handleInputChange={handleInputChange}
-      />
+      <CustomTextArea value={input} handleInputChange={handleInputChange} />
       <br />
       <Warning title={warning} />
     </>

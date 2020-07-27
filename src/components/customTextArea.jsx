@@ -1,11 +1,11 @@
 import React from "react";
 
-const CustomInput = ({ value, setInput, handleInputChange }) => (
+const CustomInput = ({ value, handleInputChange }) => (
   <textarea
     cols="50"
     rows="50"
     value={value}
-    onChange={(event) => handleInputChange(event, setInput)}
+    onChange={handleInputChange}
   ></textarea>
 );
 
