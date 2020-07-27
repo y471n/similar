@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomInput = ({ value, handleInputChange }) => (
+const CustomTextArea = ({ value, handleInputChange }) => (
   <textarea
     cols="50"
     rows="50"
@@ -9,4 +9,4 @@ const CustomInput = ({ value, handleInputChange }) => (
   ></textarea>
 );
 
-export default CustomInput;
+export default CustomTextArea;
